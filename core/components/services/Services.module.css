@@ -1,0 +1,12 @@
+
+
+.service_card_icon{
+    width: 66px;
+    height: 65px;
+    border: 1px solid #FF9900;
+    
+}
+
+.service_card_title{
+    font-size: 1.1rem;
+}

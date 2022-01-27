@@ -1,0 +1,19 @@
+
+.input_base{
+    outline: none;
+    border: none;
+    border-bottom:4px solid #6D7B9C ;
+}
+.input_base:placeholder-shown,.input_base::placeholder{
+    color: white;
+}
+.input_base:focus{
+    border-color: #FF9900;
+    outline: none;
+}
+.input_icon{
+    
+}
+.input_base:focus ~ .input_icon{
+    color: #FF9900;
+}

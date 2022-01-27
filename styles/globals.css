@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer utilities {
+  .divider {
+    height: 1px;
+  }
+}
+
+/* GLOBAL STYLES */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  @apply text-dark;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.footer-section{
+  background-image: url(/assets/images/home/bg-footer.svg);
+}
+
+
+.dots {
+  display: flex;
+  padding: 65px 0px 0px 0px;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 6px;
+  height: 6px;
+  @apply bg-grey-light;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  @apply bg-grey;
+}
+
+/* CHECKBOX */
+input:checked + div {
+  @apply border-primary;
+}
+input:checked + div svg {
+  @apply block;
+}
+
+/* DATEPICKER */
+.date-picker-calendar {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  @apply px-2 shadow-md;
+}
+.date-picker-calendar .react-datepicker__current-month {
+  @apply font-normal;
+}
+.date-picker-calendar .react-datepicker__header {
+  @apply font-light bg-white;
+}
+.date-picker-calendar .react-datepicker__day-name {
+  @apply mx-2 my-1 font-light rounded-full w-7 h-7 text-primary;
+}
+.date-picker-calendar .react-datepicker__day {
+  @apply mx-2 my-1 font-light rounded-full w-7 h-7;
+  line-height: 1.5rem;
+}
+.date-picker-calendar .react-datepicker__day:hover {
+  @apply rounded-full;
+}
+.date-picker-calendar .react-datepicker__day--selected {
+  @apply border bg-grey-light bg-opacity-60 border-primary text-primary;
+}
+.date-picker-calendar .react-datepicker__day--selected:hover {
+  @apply bg-grey-light;
+}
+
+
+/* .button-validate-focus:focus{
+  border: 1px solid #2753FF;
+  outline: none;
+} */
+/* TOOLTIPS */
+/* .tooltip {
+  @apply bg-primary bg-opacity-10 text-primary !important;
+} */
+.control_h_tooltip:hover  .h_tooltip{
+  display: block;
+}
+.h_tooltip{
+  width: 300px;
+  height: 87px;
+  display: none;
+  transform: scale(0);
+  background-color: #272931;
+}
+
+ 
+.h_tooltip::before{
+  content: "";
+ 
+  position: absolute;
+  left: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 22px solid #272931;
+  border-bottom: 12px solid transparent;
+}
+
+.line-decoration {
+  @apply flex flex-row;
+}
+.line-decoration:after,
+.line-decoration:before {
+  content: "";
+  @apply flex-1 m-auto border-b border-grey-light;
+}
+.line-decoration:before {
+  @apply mr-3;
+}
+.line-decoration:after {
+  @apply ml-3;
+}
+
+.check-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: -100;
+  animation: dash 1.1s ease  both;
+  animation-delay: .15s;
+}
+
+@keyframes dash {
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+[type='radio']:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='transparent' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
